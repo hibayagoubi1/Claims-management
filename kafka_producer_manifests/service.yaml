@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: kafka-producer-service
   labels:
-    app: kafka_producer
+    app: kafka-producer
 spec:
   selector:
-    app: kafka_producer
+    app: kafka-producer
   ports:
     - protocol: TCP
       port: 80               

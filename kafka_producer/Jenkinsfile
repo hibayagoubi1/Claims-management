@@ -12,8 +12,8 @@ pipeline {
         ARGOCD_SERVER = 'localhost:8082'  
         ARGOCD_USERNAME = 'admin'         
         ARGOCD_PASSWORD = 'nr39-kXYM8LPbi6P'  
-        APP_NAME = 'kafka_producer' // Le nom de votre application dans ArgoCD
-        DOCKER_IMAGE_NAME = "hibayaagoubi/kafka_producer"
+        APP_NAME = 'kafka-producer' // Le nom de votre application dans ArgoCD
+        DOCKER_IMAGE_NAME = "hibayaagoubi/kafka-producer"
     }
 
     stages {
