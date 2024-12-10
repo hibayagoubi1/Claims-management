@@ -1,0 +1,23 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-nodes: localhost:9200  # Remplacez par l'adresse et le port de votre cluster Elasticsearch si diff�rent
+      cluster-name: elasticsearch  # Remplacez par le nom de votre cluster Elasticsearch si diff�rent
+      repositories:
+        enabled: true
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_SERVICE_URL:http://localhost:8080/realms/claimRealm}
+          jwk-set-uri: "${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs"
+
+server:
+  port: 8082
+jwt:
+  auth:
+    converter:
+      principle-attribute: preferred_username
+
+
