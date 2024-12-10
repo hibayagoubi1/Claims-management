@@ -67,7 +67,7 @@ pipeline {
                         powershell -Command "(gc kafka-producer-manifests/deployment-kafka-producer.yml) -replace '(?<=image: ${DOCKER_IMAGE_NAME}:).*', '${BUILD_NUMBER}' | sc kafka-producer-manifests/deployment-kafka-producer.yml"
 
                         # Commit and push the changes
-                        git add kafka-producer-manifests/deployment-identity-service.yml
+                        git add kafka_producer_manifests/deployment-kafka-producer.yml
                         git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                         git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     """

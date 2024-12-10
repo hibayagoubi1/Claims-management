@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka_producer
+  labels:
+    app: kafka_producer
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kafka_producer
+  template:
+    metadata:
+      labels:
+        app: kafka_producer
+    spec:
+      containers:
+      - name: kafka_producer
+        image: hibayaagoubi/kafka_producer:1
+        ports:
+        - containerPort: 8084
